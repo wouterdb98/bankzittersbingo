@@ -154,13 +154,13 @@ const API_URL =
 const nu = new Date();
 
 const verbergenVanaf = new Date();
-verbergenVanaf.setHours(18, 45, 0, 0);
+verbergenVanaf.setHours(19, 26, 0, 0);
 
 const bingoEinde = new Date();
-bingoEinde.setHours(18, 48, 0, 0);
+bingoEinde.setHours(19, 28, 0, 0);
 
 const dashboardTerug = new Date();
-dashboardTerug.setHours(18, 50, 0, 0);
+dashboardTerug.setHours(19, 30, 0, 0);
 
 if (nu >= verbergenVanaf && nu < dashboardTerug) {
 
@@ -187,7 +187,7 @@ if (nu >= verbergenVanaf && nu < dashboardTerug) {
                     text-align:center;
                     font-family:Arial,sans-serif;
                 ">
-                    <h1>🏁 Eindsprint!</h1>
+                    <h1>Bankzitters Bingo Battle Eindsprint! 🏁</h1>
 
                     <p>
                         Het klassement is verborgen tot de prijsuitreiking. Tot 14:30 kunnen jullie nog Bingo inleveren bij de CP!
@@ -196,6 +196,11 @@ if (nu >= verbergenVanaf && nu < dashboardTerug) {
                     <h2 style="font-size:3rem;">
                         ${minuten}:${String(seconden).padStart(2,"0")}
                     </h2>
+
+                    <img src="bingoningen.jpg"
+                        style="width:100%;margin-top:30px;border-radius:12px;">
+                    <img src="snelheidsbeloning.jpg"
+                        style="width:100%;margin-top:20px;border-radius:12px;">
                 </div>
             `;
 
