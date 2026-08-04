@@ -7,12 +7,27 @@
 <title>Kies je groep</title>
 
 <style>
-body{
+body {
+    margin: 0;
+    padding: 20px;
     font-family: Arial, sans-serif;
-    text-align:center;
-    padding-top:100px;
-    background:#1f2937;
-    color:white;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)
+        ),
+        url("Screenshot_3.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+    text-align: center;
 }
 
 h1{
@@ -20,20 +35,37 @@ h1{
 }
 
 button{
-    display:block;
-    width:250px;
-    margin:10px auto;
-    padding:15px;
-    font-size:20px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+    width: 140px;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+
+    color: white;
 }
+
+button:hover{
+    background: rgba(255,255,255,0.15);
+}
+
+#groepen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
 </style>
 </head>
 <body>
 
-<h1>Kies je groep</h1>
+<h1>Wat is je groepsnummer?</h1>
 
 <div id="groepen"></div>
 
