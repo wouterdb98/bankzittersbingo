@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kies je groep</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    padding-top:100px;
+    background:#1f2937;
+    color:white;
+}
+
+h1{
+    margin-bottom:30px;
+}
+
+button{
+    display:block;
+    width:250px;
+    margin:10px auto;
+    padding:15px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Kies je groep</h1>
+
+<div id="groepen"></div>
+
+<script>
+for(let i = 29; i <= 60; i++) {
+    document.getElementById("groepen").innerHTML += `
+        <button onclick="openGroep(${i})">
+            Groep ${i}
+        </button>
+    `;
+}
+
+function openGroep(groep){
+    window.location.href =
+        "dashboard.html?groep=" + groep;
+}
+</script>
+
+</body>
+</html>
