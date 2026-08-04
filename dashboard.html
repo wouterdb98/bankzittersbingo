@@ -43,7 +43,23 @@ body {
     margin: 0 auto;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
 }
-    
+
+.beloningen {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;   /* afbeelding onderaan */
+    justify-content: center;
+}
+
+.beloningen img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .container {
     max-width: 1000px;
     margin: auto;
@@ -126,16 +142,12 @@ canvas {
         <img src="teamfoto.png" alt="Teamfoto">
     </div>
 
-    <div class="card">
-        <img src="bingobeloning.jpg"
-             alt="Bingobeloningen"
-             style="width:100%; border-radius:12px;">
+    <div class="beloningen">
+        <img src="bingobeloning.png" alt="Bingobeloningen">
     </div>
 
-    <div class="card">
-        <img src="snelheidsbeloning.jpg"
-             alt="Snelheidsbeloning"
-             style="width:100%; border-radius:12px;">
+    <div class="beloningen">
+        <img src="snelheidsbeloning.png" alt="Snelheidsbeloning">
     </div>
     
 </div>
