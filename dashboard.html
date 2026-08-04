@@ -140,6 +140,95 @@ const MIJN_GROEP =
 const API_URL =
 "https://script.google.com/macros/s/AKfycbw9tZRdzZBMNnFUp7K_G5ttaXZu-ZDdicDTk9-qxjffaaQxJe1PvRMiA-5O262GCnc/exec";
 
+const nu = new Date();
+
+const verbergenVanaf = new Date();
+verbergenVanaf.setHours(18, 45, 0, 0);
+
+const bingoEinde = new Date();
+bingoEinde.setHours(18, 48, 0, 0);
+
+const dashboardTerug = new Date();
+dashboardTerug.setHours(18, 50, 0, 0);
+
+if (nu >= verbergenVanaf && nu < dashboardTerug) {
+
+    function toonScherm() {
+
+        const nu = new Date();
+
+        // 14:00 - 14:30
+        if (nu < bingoEinde) {
+
+            const verschil = bingoEinde - nu;
+
+            const minuten = Math.floor(verschil / 1000 / 60);
+            const seconden = Math.floor((verschil / 1000) % 60);
+
+            document.body.innerHTML = `
+                <div style="
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    align-items:center;
+                    height:100vh;
+                    color:white;
+                    text-align:center;
+                    font-family:Arial,sans-serif;
+                ">
+                    <h1>🏁 Eindsprint!</h1>
+
+                    <p>
+                        Het klassement is verborgen tot de prijsuitreiking. Tot 14:30 kunnen jullie nog Bingo inleveren bij de CP!
+                    </p>
+
+                    <h2 style="font-size:3rem;">
+                        ${minuten}:${String(seconden).padStart(2,"0")}
+                    </h2>
+                </div>
+            `;
+
+        // 14:30 - 15:05
+        } else {
+
+            document.body.innerHTML = `
+                <div style="
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    align-items:center;
+                    height:100vh;
+                    color:white;
+                    text-align:center;
+                    font-family:Arial,sans-serif;
+                ">
+                    <h1>🚶 Bingo afgelopen!</h1>
+
+                    <p style="max-width:600px;font-size:1.2rem;">
+                        We lopen terug naar het KVW-terrein voor de
+                        prijsuitreiking.
+                    </p>
+
+                    <p>
+                        Na de prijsuitreiking kun je de eindstand weer bekijken
+                        op je dashboard.
+                    </p>
+                </div>
+            `;
+        }
+
+        // Dashboard weer open om 15:05
+        if (nu >= dashboardTerug) {
+            location.reload();
+        }
+    }
+
+    toonScherm();
+    setInterval(toonScherm, 1000);
+
+    throw new Error("Dashboard verborgen");
+}
+
 fetch(API_URL + "?groep=" + MIJN_GROEP)
 
 .then(response => response.json())
