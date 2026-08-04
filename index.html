@@ -153,7 +153,7 @@ fetch(API_URL + "?groep=" + MIJN_GROEP)
         data.volgers;
 
     document.getElementById("positie").textContent =
-        "#" + data.positie;
+        data.positie + "e";
 
     const labels =
         data.groepen.map(x => x.groep);
