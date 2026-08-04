@@ -167,7 +167,7 @@ const API_URL =
 const nu = new Date();
 
 const verbergenVanaf = new Date();
-verbergenVanaf.setHours(19, 26, 0, 0);
+verbergenVanaf.setHours(19, 38, 0, 0);
 
 const bingoEinde = new Date();
 bingoEinde.setHours(19, 28, 0, 0);
@@ -210,10 +210,14 @@ if (nu >= verbergenVanaf && nu < dashboardTerug) {
                         ${minuten}:${String(seconden).padStart(2,"0")}
                     </h2>
 
-                    <img src="bingobeloning.jpg"
-                        style="width:100%;margin-top:30px;border-radius:12px;">
-                    <img src="snelheidsbeloning.jpg"
-                        style="width:100%;margin-top:20px;border-radius:12px;">
+                </div>
+                
+                <div class="beloningen">
+                    <img src="bingobeloning.jpg" alt="Bingobeloningen">
+                </div>
+
+                <div class="beloningen">
+                    <img src="snelheidsbeloning.jpg" alt="Snelheidsbeloning">
                 </div>
             `;
 
