@@ -31,7 +31,8 @@ body {
     background-attachment: fixed;
 }
 
-    
+
+/* Teamfoto */
 .afbeelding {
     text-align: center;
     margin-top: -5px;
@@ -44,13 +45,15 @@ body {
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
 }
 
+
+/* Beloningen */
 .beloningen {
     width: 100%;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;   /* afbeelding onderaan */
+    align-items: flex-end;
     justify-content: center;
     margin-bottom: 20px;
 }
@@ -61,50 +64,81 @@ body {
     height: auto;
 }
 
+
+/* Container */
 .container {
     max-width: 1000px;
     margin: auto;
 }
 
+
+/* Algemene titel */
 h1 {
     text-align: center;
 }
 
+
+/* Grafiek-kaart */
 .card {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(8px);
-
     border-radius: 16px;
-
     padding: 20px;
-
     margin-bottom: 20px;
 }
 
+
+/* Statistieken naast elkaar */
 .stats {
     display: flex;
+    flex-direction: row;
     gap: 10px;
-    flex-wrap: wrap;
+    width: 100%;
 }
 
+
+/* Algemene statistiek-blokken */
 .stat {
     flex: 1;
     min-width: 0;
     text-align: center;
-    background: rgba(255,255,255,0.08);
     border-radius: 12px;
     padding: 15px;
+    box-sizing: border-box;
 }
 
+
+/* Grote waarde */
 .stat h2 {
     margin: 0;
     font-size: 2rem;
 }
 
+
+/* Kleine labels onder de waarde */
+.stat p {
+    margin: 8px 0 0;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    opacity: 0.8;
+}
+
+
+/* Dashboard titel */
 .dashboard-titel {
     color: #FFD700;
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
+
+
+/* =========================
+   VOLGERS
+   ========================= */
 
 .stat.volgers {
     background: rgba(52, 152, 219, 0.25);
@@ -115,22 +149,34 @@ h1 {
     color: #74c7ff;
 }
 
+.stat.volgers p {
+    color: #b9e3ff;
+}
+
+
+/* =========================
+   POSITIE - 4e en lager
+   ========================= */
+
 .stat.positie {
     background: rgba(46, 204, 113, 0.25);
     border: 2px solid rgba(46, 204, 113, 0.6);
+    transition: all 0.3s ease;
 }
 
 .stat.positie h2 {
     color: #6dff9b;
 }
 
-.stat.positie {
-    background: rgba(255,255,255,0.15);
-    border: 2px solid rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
+.stat.positie p {
+    color: #b8f5c9;
 }
 
-/* 🥇 1e */
+
+/* =========================
+   🥇 1e plaats
+   ========================= */
+
 .stat.positie.goud {
     background: rgba(255, 215, 0, 0.25);
     border-color: #FFD700;
@@ -140,7 +186,15 @@ h1 {
     color: #FFD700;
 }
 
-/* 🥈 2e */
+.stat.positie.goud p {
+    color: #ffe98a;
+}
+
+
+/* =========================
+   🥈 2e plaats
+   ========================= */
+
 .stat.positie.zilver {
     background: rgba(192, 192, 192, 0.25);
     border-color: #C0C0C0;
@@ -150,7 +204,15 @@ h1 {
     color: #E8E8E8;
 }
 
-/* 🥉 3e */
+.stat.positie.zilver p {
+    color: #d5d5d5;
+}
+
+
+/* =========================
+   🥉 3e plaats
+   ========================= */
+
 .stat.positie.brons {
     background: rgba(205, 127, 50, 0.25);
     border-color: #CD7F32;
@@ -160,6 +222,12 @@ h1 {
     color: #E5A66F;
 }
 
+.stat.positie.brons p {
+    color: #f0c49b;
+}
+
+
+/* Grafiek */
 canvas {
     width: 100%;
     max-height: 500px;
