@@ -260,11 +260,19 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
     padding: 20px;
 
     text-align: center;
+}
+
+.countdown-content {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -498,34 +506,37 @@ if (nu >= verbergenVanaf && nu < dashboardTerug) {
                 
                 <div class="countdown-scherm">
 
-                    <div class="countdown-logo">
-                        <img 
-                            src="titel.png"
-                            alt="De Grote Bankzitters Bingo Battle"
-                        >
+                    <div class="countdown-content">
+
+                        <div class="countdown-logo">
+                            <img 
+                                src="titel.png"
+                                alt="De Grote Bankzitters Bingo Battle"
+                            >
+                        </div>
+
+
+                        <h1 class="countdown-titel">
+                            🏁 Eindsprint!
+                        </h1>
+
+
+                        <p class="countdown-tekst">
+                            Het klassement is nu verborgen.
+                            <br>
+                            Jullie hebben nog tot 14:30 de tijd om Bingo in te leveren bij de CP!
+                        </p>
+
+
+                        <div class="countdown-box">
+
+                            <h2 class="countdown-tijd">
+                                ${minuten}:${String(seconden).padStart(2,"0")}
+                            </h2>
+
+                        </div>
+
                     </div>
-
-
-                    <h1 class="countdown-titel">
-                        🏁 Eindsprint!
-                    </h1>
-
-
-                    <p class="countdown-tekst">
-                        Het klassement is nu verborgen.
-                        <br>
-                        Jullie hebben nog tot 14:30 de tijd om Bingo in te leveren bij de CP!
-                    </p>
-
-
-                    <div class="countdown-box">
-
-                        <h2 class="countdown-tijd">
-                            ${minuten}:${String(seconden).padStart(2,"0")}
-                        </h2>
-
-                    </div>
-
 
                     <div class="countdown-beloningen">
 
