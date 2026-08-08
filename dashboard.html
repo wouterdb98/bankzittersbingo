@@ -124,6 +124,42 @@ h1 {
     color: #6dff9b;
 }
 
+.stat.positie {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+/* 🥇 1e */
+.stat.positie.goud {
+    background: rgba(255, 215, 0, 0.25);
+    border-color: #FFD700;
+}
+
+.stat.positie.goud h2 {
+    color: #FFD700;
+}
+
+/* 🥈 2e */
+.stat.positie.zilver {
+    background: rgba(192, 192, 192, 0.25);
+    border-color: #C0C0C0;
+}
+
+.stat.positie.zilver h2 {
+    color: #E8E8E8;
+}
+
+/* 🥉 3e */
+.stat.positie.brons {
+    background: rgba(205, 127, 50, 0.25);
+    border-color: #CD7F32;
+}
+
+.stat.positie.brons h2 {
+    color: #E5A66F;
+}
+
 canvas {
     width: 100%;
     max-height: 500px;
@@ -306,8 +342,25 @@ fetch(API_URL + "?groep=" + MIJN_GROEP)
     document.getElementById("volgers").textContent =
         data.volgers;
 
-    document.getElementById("positie").textContent =
-        data.positie + "e";
+    const positieBlok = document.getElementById("positieBlok");
+    const positie = Number(data.positie);
+
+    let positieTekst = positie + "e";
+
+    if (positie === 1) {
+        positieTekst = "🥇 1e";
+        positieBlok.classList.add("goud");
+    } 
+    else if (positie === 2) {
+        positieTekst = "🥈 2e";
+        positieBlok.classList.add("zilver");
+    } 
+    else if (positie === 3) {
+        positieTekst = "🥉 3e";
+        positieBlok.classList.add("brons");
+    }
+
+    document.getElementById("positie").textContent = positieTekst;
 
     const labels =
         data.groepen.map(x => x.groep);
