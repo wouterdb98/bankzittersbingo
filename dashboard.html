@@ -167,13 +167,13 @@ const API_URL =
 const nu = new Date();
 
 const verbergenVanaf = new Date();
-verbergenVanaf.setHours(19, 39, 0, 0);
+verbergenVanaf.setHours(12, 40, 0, 0);
 
 const bingoEinde = new Date();
-bingoEinde.setHours(19, 50, 0, 0);
+bingoEinde.setHours(12, 42, 0, 0);
 
 const dashboardTerug = new Date();
-dashboardTerug.setHours(19, 51, 0, 0);
+dashboardTerug.setHours(12, 44, 0, 0);
 
 if (nu >= verbergenVanaf && nu < dashboardTerug) {
 
@@ -196,7 +196,8 @@ if (nu >= verbergenVanaf && nu < dashboardTerug) {
                     justify-content:center;
                     align-items:center;
                     height:100vh;
-                    color:white;
+                    color: #FFD700;
+                    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
                     text-align:center;
                     font-family:Arial,sans-serif;
                 ">
@@ -206,9 +207,22 @@ if (nu >= verbergenVanaf && nu < dashboardTerug) {
                         Het klassement is verborgen tot de prijsuitreiking. Tot 14:30 kunnen jullie nog Bingo inleveren bij de CP!
                     </p>
 
-                    <h2 style="font-size:3rem;">
+                <div style="
+                    background:rgba(0,0,0,0.35);
+                    border:3px solid #FFD700;
+                    border-radius:20px;
+                    padding:20px 40px;
+                    margin:20px 0;
+                    box-shadow:0 0 20px rgba(255,215,0,0.3);
+                ">
+                    <h2 style="
+                        margin:0;
+                        font-size:4rem;
+                        color:#FFD700;
+                    ">
                         ${minuten}:${String(seconden).padStart(2,"0")}
                     </h2>
+                </div>
 
                 </div>
                 
